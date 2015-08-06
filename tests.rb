@@ -1,6 +1,6 @@
 require "minitest/autorun"
 
-class TestString < Minitest::Test
+class TestString < MiniTest::Unit::TestCase
 
   def test_two_string_can_be_equal
     str_1 = "this is a sentence"
@@ -9,38 +9,40 @@ class TestString < Minitest::Test
     assert_equal(str_1, str_2)
   end
 
+
   def test_join_two_string_with_a_plus
-    skip "waiting to be implemented"
+
     str_1 = "abc"
     str_2 = "xyz"
 
-    actual = "a" # replace "a" the logic to join to strings: str_1 + str_2
+    actual = str_1 + str_2
 
     assert_equal("abcxyz", actual)
+
   end
 
   def test_join_two_string_with_alternate_syntax
-    skip "waiting to be implemented"
+
     first = "John"
     last = "Snow"
 
-    actual = "a" # replace "a" the logic to join to strings: "#{first} #{last}"
+    actual = "#{first} #{last}"
 
     assert_equal("John Snow", actual)
   end
 
   # docs: http://ruby-doc.org/core-2.2.0/String.html#method-i-length
   def test_the_length_of_a_string
-    skip "waiting to be implemented"
+
     str_1 = "abc"
 
-    actual = 1 # replace 1 the logic to get the length of the string - read the docs
-
+     # replace 1 the logic to get the length of the string - read the docs
+    actual = str_1.length
     assert_equal(3, actual)
   end
 
   # docs: http://ruby-doc.org/core-2.2.0/String.html#method-i-include-3F
-  def test_if_a_string_contains_a_sub_string  	
+  def test_if_a_string_contains_a_sub_string
     skip "waiting to be implemented"
     # sub string is a smaller string in a larger one
     str_1 = "hello there world"
@@ -52,7 +54,7 @@ class TestString < Minitest::Test
   end
 
   # docs: http://ruby-doc.org/core-2.2.0/String.html#method-i-capitalize
-  def test_capatalizing_a_string  	
+  def test_capatalizing_a_string
     skip "waiting to be implemented"
     str_1 = "mark"
     actual = str_1 # use the method in the docs above to capitalize the string
