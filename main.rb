@@ -20,5 +20,6 @@ puts "Your choices & costs are:"
 puts
 puts options[0..6]
 
+#options[0][1]+[1][1]
 puts
 puts "What will it be?"
