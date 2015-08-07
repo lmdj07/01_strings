@@ -41,18 +41,18 @@ class TestString < MiniTest::Unit::TestCase
     assert_equal(3, actual)
   end
 
+  # docs: http://ruby-doc.org/core-2.2.0/String.html#method-i-include-3F
+    def test_if_a_string_contains_a_sub_string
 
+      # sub string is a smaller string in a larger one
+      str_1 = "hello there world"
+      sub_string = "ll"
 
-  def test_if_a_string_contains_a_sub_string
+      actual = str_1.include? "ll"
 
-    # sub string is a smaller string in a larger one
-    str_1 = "hello there world"
-    sub_string = "ll"
+      assert(actual,sub_string)
+    end
 
-    actual = false # use the method in the docs above to see if str_1 contains the sub_string
-
-    assert_equal(actual,sub_string)
-  end
 
   # docs: http://ruby-doc.org/core-2.2.0/String.html#method-i-capitalize
   def test_capatalizing_a_string
@@ -90,7 +90,7 @@ class TestString < MiniTest::Unit::TestCase
     first = "mark"
     last = "smith"
 
-    actual = "#{first} #{last}".capitalize
+    actual = "#{first.capitalize} #{last.capitalize}"
 
     assert_equal("Mark Smith", actual)
   end
