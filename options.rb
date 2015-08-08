@@ -21,6 +21,6 @@ end until user_input == 'opt'
 puts
 puts "Your choices & associated costs are:"
 puts
-puts options.each { |key, value| puts "#{key} - #{value}" }
+options.each { |key, value| puts "#{key}" }
 puts
 puts "What will it be?"
