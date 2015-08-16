@@ -1,5 +1,7 @@
 #first_attempt_at_coding
-
+def display_balance(balance)
+  puts "Your balance is #{balance}"
+end
 
 puts "what would you do with a million pounds?"
 
@@ -34,55 +36,54 @@ balance = 1000
 if
   user_choice == "House" 
   balance = balance - options[0][1]
-  puts "Your balance is #{balance}"
+  display_balance (balance)
 
 elsif
 
   user_choice == "Ferrari"
   balance = balance - options[1][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 elsif
   user_choice == "House"
   balance = balance - options[0][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 elsif
 
   user_choice == "Ferrari"
   balance = balance - options[1][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 elsif
 
   user_choice == "Tech-Firm"
   balance = balance - options[2][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 elsif
 
   user_choice == "Cruise"
   balance = balance - options[3][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 elsif
 
   user_choice == "Mortgage"
   balance = balance - options[4][1]
-  puts "Your balance is #{balance}"
-
+   display_balance (balance)
 
 elsif
 
   user_choice == "Vegas"
   balance = balance - options[5][1]
-  puts "Your balance is #{balance}"
+ display_balance (balance)
 
 elsif
 
   user_choice == "No-Work"
   balance = balance - options[6][1]
-  puts "Your balance is #{balance}"
+   display_balance (balance)
 
 end
 
