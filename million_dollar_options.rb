@@ -25,56 +25,72 @@ puts
 puts "type the last word of your choice 
 e.g \"Ferrari\" or \"House\" etc... \(case sensitive\)"
 puts
-#user_choice = gets.chomp
-$Opening_Balance = 1000
-balance = $Opening_Balance - user_choice.to_i
+user_choice = gets.chomp
+balance = 1000
 
 
 #def choices ()
 
 if
-user_choice == "House"
-puts "Your balance is #{balance - options[0][1].to_i}"
+  user_choice == "House" 
+  balance = balance - options[0][1]
+  puts "Your balance is #{balance}"
 
 elsif
 
-user_choice == "Ferrari"
-puts "Your balance is #{balance - options[1][1].to_i}"
+  user_choice == "Ferrari"
+  balance = balance - options[1][1]
+  puts "Your balance is #{balance}"
+
+elsif
+  user_choice == "House"
+  balance = balance - options[0][1]
+  puts "Your balance is #{balance}"
 
 elsif
 
-user_choice == "Tech-Firm"
-puts "Your balance is #{balance - options[2][1].to_i}"
+  user_choice == "Ferrari"
+  balance = balance - options[1][1]
+  puts "Your balance is #{balance}"
 
 elsif
 
-user_choice == "Cruise"
-puts "Your balance is #{balance - options[3][1].to_i}"
+  user_choice == "Tech-Firm"
+  balance = balance - options[2][1]
+  puts "Your balance is #{balance}"
 
 elsif
 
-user_choice == "Mortgage"
-puts "Your balance is #{balance - options[4][1].to_i}"
+  user_choice == "Cruise"
+  balance = balance - options[3][1]
+  puts "Your balance is #{balance}"
 
 elsif
 
-user_choice == "Vegas"
-puts "Your balance is #{balance - options[5][1].to_i}"
+  user_choice == "Mortgage"
+  balance = balance - options[4][1]
+  puts "Your balance is #{balance}"
+
 
 elsif
 
-user_choice == "No-Work"
-puts "Your balance is #{balance - options[6][1].to_i}"
+  user_choice == "Vegas"
+  balance = balance - options[5][1]
+  puts "Your balance is #{balance}"
 
-return user_choice
+elsif
+
+  user_choice == "No-Work"
+  balance = balance - options[6][1]
+  puts "Your balance is #{balance}"
 
 end
 
 #while balance != 0 
-
-puts "continue?"
-end
-end
+#end
+#puts "continue?"
+#end
+#end
 
 #else
 #puts "Keep Shopping"
