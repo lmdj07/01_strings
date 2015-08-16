@@ -3,6 +3,12 @@ def display_balance(balance)
   puts "Your balance is #{balance}"
 end
 
+#def handle_house_choice(options, balance)
+    #balance = balance - options[0][1]
+    #balance
+#end
+
+
 puts "what would you do with a million pounds?"
 
 options = [["New House",650],["Red Ferrari",225], ["Buy Tech-Firm",150], ["Worldwide Cruise",75], 
@@ -31,7 +37,14 @@ user_choice = gets.chomp
 balance = 1000
 
 
-#def choices ()
+def altn_choices (*options)
+options.each { |options| puts options}
+end
+
+while balance - altn_choices !=0
+puts "continue?"
+end
+
 
 if
   user_choice == "House" 
@@ -42,24 +55,13 @@ elsif
 
   user_choice == "Ferrari"
   balance = balance - options[1][1]
-   display_balance (balance)
-
-elsif
-  user_choice == "House"
-  balance = balance - options[0][1]
-   display_balance (balance)
-
-elsif
-
-  user_choice == "Ferrari"
-  balance = balance - options[1][1]
-   display_balance (balance)
+  display_balance (balance)
 
 elsif
 
   user_choice == "Tech-Firm"
   balance = balance - options[2][1]
-   display_balance (balance)
+  display_balance (balance)
 
 elsif
 
@@ -71,27 +73,23 @@ elsif
 
   user_choice == "Mortgage"
   balance = balance - options[4][1]
-   display_balance (balance)
+  display_balance (balance)
 
 elsif
 
   user_choice == "Vegas"
   balance = balance - options[5][1]
- display_balance (balance)
+  display_balance (balance)
 
 elsif
 
   user_choice == "No-Work"
   balance = balance - options[6][1]
-   display_balance (balance)
+  display_balance (balance)
 
 end
 
-#while balance != 0 
-#end
-#puts "continue?"
-#end
-#end
+
 
 #else
 #puts "Keep Shopping"
