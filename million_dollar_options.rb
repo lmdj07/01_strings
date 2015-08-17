@@ -37,14 +37,11 @@ user_choice = gets.chomp
 balance = 1000
 
 
-def altn_choices (*options)
-options.each { |options| puts options}
-end
-
-while balance - altn_choices !=0
-puts "continue?"
-end
-
+  
+#while balance - altn_choices !=0
+#puts "continue?"
+#end
+def altn_choices (user_choice,balance)
 
 if
   user_choice == "House" 
@@ -86,7 +83,8 @@ elsif
   user_choice == "No-Work"
   balance = balance - options[6][1]
   display_balance (balance)
-
+return balance
+end
 end
 
 
