@@ -1,12 +1,7 @@
-#first_attempt_at_coding
 def display_balance(balance)
   puts "Your balance is #{balance}"
 end
 
-#def handle_house_choice(options, balance)
-    #balance = balance - options[0][1]
-    #balance
-#end
 
 
 puts "what would you do with a million pounds?"
@@ -37,25 +32,19 @@ user_choice = gets.chomp
 balance = 1000
 
 
-def altn_choices (*options)
-options.each { |options| puts options}
-end
-
-while balance - altn_choices !=0
-puts "continue?"
-end
-
 
 if
   user_choice == "House" 
   balance = balance - options[0][1]
   display_balance (balance)
+  
 
 elsif
 
   user_choice == "Ferrari"
   balance = balance - options[1][1]
   display_balance (balance)
+  altn_choices (altn)
 
 elsif
 
@@ -90,9 +79,5 @@ elsif
 end
 
 
-
-#else
-#puts "Keep Shopping"
-#end
 
 
