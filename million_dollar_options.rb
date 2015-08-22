@@ -29,17 +29,8 @@ puts "type the last word of your choice
 e.g \"Ferrari\" or \"House\" etc... \(case sensitive\)"
 puts
 user_choice = gets.chomp
-balance = 1000
+balance = 1000 - user_choice.to_i
 
-
-<<<<<<< HEAD
-=======
-  
-#while balance - altn_choices !=0
-#puts "continue?"
-#end
-def altn_choices (user_choice,balance)
->>>>>>> 69ef0aac2af4cdcbd73f217c2609dc0899ad6ed4
 
 if
   user_choice == "House" 
@@ -84,9 +75,8 @@ elsif
   balance = balance - options[6][1]
   display_balance (balance)
 return balance
-end
-end
 
+end
 
 
 
