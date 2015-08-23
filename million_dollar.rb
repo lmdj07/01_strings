@@ -53,6 +53,9 @@ end while balance >0
 
 #IDEAS TO ENHANCE GAME
 #IF USER DOES NOT WANT TO USE ALL THEY CAN GIVE TO CHARITY OF THEIR CHOICE
+###need to display a list of charities
 #IF USER GOES OVER A MILLION, THEY NEED TO SELL BACK TO THE GAME AT A 5% LOSS
-
+#if user chooses to start all over again, they get 10% less money (maybe 10% of their ending balance deducted from  the million)
+#if the user choses to abort the game altogether, they must leave a comment; comments need to be saved to a log file
+#if user wants something not in the list, they can say what that is and fetch the price from ???? web?
 
