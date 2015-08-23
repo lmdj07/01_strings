@@ -31,7 +31,7 @@ puts
 user_choice = gets.chomp
 balance = 1000 - user_choice.to_i
 
-
+ 
 if
   user_choice == "House" 
   balance = balance - options[0][1]
@@ -43,7 +43,7 @@ elsif
   user_choice == "Ferrari"
   balance = balance - options[1][1]
   display_balance (balance)
-  altn_choices (altn)
+
 
 elsif
 
@@ -74,7 +74,6 @@ elsif
   user_choice == "No-Work"
   balance = balance - options[6][1]
   display_balance (balance)
-return balance
 
 end
 
