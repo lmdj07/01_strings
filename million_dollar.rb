@@ -80,13 +80,14 @@ begin
 		comment = []
 		user_input = gets.chomp
 		comment << user_input
-		puts "thanks for your feedback"
 		puts
+		puts "you said : #{comment}"
+		puts 
+		puts "We value your feedback .... thank you"
 		exit
 		# comm_file = File.open("exit_comments.txt","w","a")
 		# comm_file << gets.chomp
 		# comm_file.close
-
 
 	else 
 		puts "<invalid choice>"
@@ -95,7 +96,7 @@ begin
 		puts "only above list (case sensitive)"
 	end
 	
-	if 	options.has_key?(user_choice) && @balance >=0
+	if 	options.has_key?(user_choice) && @balance >0
 		puts "Go on, spend some more or Give to Charity"
 	end
 
