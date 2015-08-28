@@ -6,6 +6,13 @@ def display_menu(menu)
   puts "*******************"
   menu.each { |key, value| puts "#{key}"}
   puts "*******************"
+  puts "or Give to Charity"
+  puts "*******************"
+end
+
+def show_charities (charity)
+	charity.each { |key, value| puts "#{value}"}
+
 end
 
 puts "what would you do with a million pounds?"
@@ -13,8 +20,8 @@ puts "what would you do with a million pounds?"
 options = {"New House"=> 650,"Red Ferrari" => 225, "Buy Tech Firm" =>150, "Worldwide Cruise" => 75, 
 "Pay Off Mortgage" => 250, "Visit Las Vegas" => 100, "Six Months No Work" => 50}
 
+charity_list = {1=>"Save the Children", 2=>"Cancer Research UK", 3=>"Aged UK", 4=>"NSPCC", 5=>"Centre Point", 6=>"Shelter", 7=>"Salvation Army", 8=>"The Disabilities Trust"}
 puts
-
 
 
 begin
@@ -35,12 +42,21 @@ begin
 
 	puts
 	user_choice = gets.chomp
-  	 
+
+
 	if  options.has_key?(user_choice)
 		balance = balance - options[user_choice]
 		display_balance (balance)
-		
-		
+
+	elsif 
+		user_choice == "Give to Charity"
+		puts
+		puts "Our preferred Charities List"
+		puts
+		puts "**********************"
+		show_charities(charity_list)
+		puts "**********************"
+
 	else 
 		puts "<invalid choice>"
 		puts
