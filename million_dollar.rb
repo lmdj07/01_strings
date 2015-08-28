@@ -87,6 +87,15 @@ begin
 		puts "You've spent too much; you need to sell something"
 	end
 
+	if  user_choice == "End Game"
+		puts "Please leave a comment"
+		#comment = []
+		comment <<gets.chomp
+		comm_file = File.open("exit_comments.txt","w","a")
+		comm_file<<gets.chomp
+		comm_file.close
+	end
+
 
 end while @balance >0
 
@@ -96,8 +105,9 @@ end while @balance >0
 ######################################################################################################
 # If user does not want to spend all they can give to charity from list of preferred chrities - DONE
 # need to display a list of charities - DONE
-# If user goes over a millios they need to sell back at a 5% LOSS
+# If user goes over a million they need to sell back at a 5% LOSS
 # if user chooses to start all over again, they get 10% less money (maybe 10% of their ending balance 
 # deducted from  the million)
 # if the user choses to abort the game altogether, they must leave a comment; comments need to be saved to a log file
+# save comments in an array???
 # if user wants something not in the list, they can say what that is and fetch the price from ???? web?
