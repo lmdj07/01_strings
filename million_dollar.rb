@@ -72,6 +72,22 @@ begin
 		puts "Select from above list or let us choose for you"
 		decision_charities(user_choice)
 
+	elsif
+	    user_choice == "End Game"
+	    puts
+		puts "Please leave a comment"
+		puts
+		comment = []
+		user_input = gets.chomp
+		comment << user_input
+		puts "thanks for your feedback"
+		puts
+		exit
+		# comm_file = File.open("exit_comments.txt","w","a")
+		# comm_file << gets.chomp
+		# comm_file.close
+
+
 	else 
 		puts "<invalid choice>"
 		puts
@@ -87,17 +103,7 @@ begin
 		puts "You've spent too much; you need to sell something"
 	end
 
-	if  user_choice == "End Game"
-		puts "Please leave a comment"
-		#comment = []
-		comment <<gets.chomp
-		comm_file = File.open("exit_comments.txt","w","a")
-		comm_file<<gets.chomp
-		comm_file.close
-	end
-
-
-end while @balance >0
+	end while @balance >0
 
 
 
