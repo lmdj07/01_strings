@@ -27,6 +27,11 @@ def decision_charities(give_to)
 	else puts "not in list"
 	end
 end
+
+def end_game_options
+
+
+end
 puts "what would you do with a million pounds?"
 
 options = {"New House"=> 650,"Red Ferrari" => 225, "Buy Tech Firm" =>150, "Worldwide Cruise" => 75, 
@@ -38,6 +43,7 @@ puts
 
 begin
   puts "type 'opt' for options"
+  puts
   user_input = gets.strip
 end until user_input == 'opt'
 puts
@@ -73,7 +79,7 @@ begin
 		decision_charities(user_choice)
 
 	elsif
-	    user_choice == "End Game"
+	    user_choice == "End Game" && @balance > 899
 	    puts
 		puts "Please leave a comment"
 		puts
@@ -84,10 +90,39 @@ begin
 		puts "you said : #{comment}"
 		puts 
 		puts "We value your feedback .... thank you"
+		puts
 		exit
 		# comm_file = File.open("exit_comments.txt","w","a")
 		# comm_file << gets.chomp
 		# comm_file.close
+
+	elsif
+		user_choice == "End Game" && @balance < 899
+	    puts
+		puts "Please donate your balance to Charity"
+		puts
+		puts "Our preferred Charities List"
+		puts
+		puts "**********************"
+		show_charities(@charity_list)
+		puts "**********************"
+		puts
+		puts "Select from above list or let us choose for you"
+		decision_charities(user_choice)
+		puts "also leave a commnt"
+		comment = []
+		user_input = gets.chomp
+		comment << user_input
+		puts
+		puts "you said : #{comment}"
+		puts 
+		puts "We value your feedback .... thank you"
+		puts
+		exit
+		# comm_file = File.open("exit_comments.txt","w","a")
+		# comm_file << gets.chomp
+		# comm_file.close
+
 
 	else 
 		puts "<invalid choice>"
@@ -113,8 +148,9 @@ begin
 # If user does not want to spend all they can give to charity from list of preferred chrities - DONE
 # need to display a list of charities - DONE
 # If user goes over a million they need to sell back at a 5% LOSS
+# user purchases should be saved in an array; display when balance is negative; user to sell back
 # if user chooses to start all over again, they get 10% less money (maybe 10% of their ending balance 
 # deducted from  the million)
-# if the user choses to abort the game altogether, they must leave a comment; comments need to be saved to a log file
-# save comments in an array???
+# if the user choses to abort the game altogether they must leave a comment - DONE
+# comments need to be saved to a log file or save comments in an array???
 # if user wants something not in the list, they can say what that is and fetch the price from ???? web?
