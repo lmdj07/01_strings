@@ -15,8 +15,8 @@ def show_charities (charity)
 end
 
 def decision_charities(give_to)
-	user_choice = gets.chomp
-	if @charity_list.has_value?(user_choice)
+	@user_choice = gets.chomp
+	if @charity_list.has_value?(@user_choice)
 		puts"enter amount to give"
 		puts
 		puts "you have #{@balance} left"
@@ -24,14 +24,16 @@ def decision_charities(give_to)
 		amount_to_give = gets.chomp.to_i
 		@balance = @balance - amount_to_give
 		puts "you have #{@balance} left"
-	else puts "not in list"
+	else 
+		puts "not in list"
 	end
 end
 
-def end_game_options
+# def sell_back_penalty(money)
+# 	@answer = gets.chomp
+# 	@answer * 0.90
+# end
 
-
-end
 puts "what would you do with a million pounds?"
 
 options = {"New House"=> 650,"Red Ferrari" => 225, "Buy Tech Firm" =>150, "Worldwide Cruise" => 75, 
@@ -42,16 +44,17 @@ puts
 
 
 begin
-  puts "type 'opt' for options"
-  puts
-  user_input = gets.strip
+	puts "type 'opt' for options"
+	puts
+  	user_input = gets.strip
 end until user_input == 'opt'
-puts
-puts "Your choices are:"
-puts
-display_menu(options)
-puts
-puts "Pick from the list above"
+
+	puts
+	puts "Your choices are:"
+	puts
+	display_menu(options)
+	puts
+	puts "Pick from the list above"
 
 
 @balance = 1000
@@ -59,15 +62,15 @@ puts "Pick from the list above"
 begin 
 
 	puts
-	user_choice = gets.chomp
+	@user_choice = gets.chomp
 
 
-	if  options.has_key?(user_choice)
-		@balance = @balance - options[user_choice]
+	if  options.has_key?(@user_choice)
+		@balance = @balance - options[@user_choice]
 		display_balance (@balance)
 
 	elsif 
-		user_choice == "Give to Charity"
+		@user_choice == "Give to Charity"
 		puts
 		puts "Our preferred Charities List"
 		puts
@@ -76,10 +79,10 @@ begin
 		puts "**********************"
 		puts
 		puts "Select from above list or let us choose for you"
-		decision_charities(user_choice)
+		decision_charities(@user_choice)
 
 	elsif
-	    user_choice == "End Game" && @balance > 899
+	    @user_choice == "End Game" && @balance > 899
 	    puts
 		puts "Please leave a comment"
 		puts
@@ -97,7 +100,7 @@ begin
 		# comm_file.close
 
 	elsif
-		user_choice == "End Game" && @balance < 899
+		@user_choice == "End Game" && @balance < 899
 	    puts
 		puts "Please donate your balance to Charity"
 		puts
@@ -108,7 +111,7 @@ begin
 		puts "**********************"
 		puts
 		puts "Select from above list or let us choose for you"
-		decision_charities(user_choice)
+		decision_charities(@user_choice)
 		puts "also leave a commnt"
 		comment = []
 		user_input = gets.chomp
@@ -131,15 +134,17 @@ begin
 		puts "only above list (case sensitive)"
 	end
 	
-	if 	options.has_key?(user_choice) && @balance >0
+	if 	options.has_key?(@user_choice) && @balance >0
 		puts "Go on, spend some more or Give to Charity"
 	end
 
 	if 	@balance <0
 		puts "You've spent too much; you need to sell something"
+		puts "What can you sell back?"
 	end
+	
 
-	end while @balance >0
+end while @balance >0
 
 
 
@@ -154,3 +159,4 @@ begin
 # if the user choses to abort the game altogether they must leave a comment - DONE
 # comments need to be saved to a log file or save comments in an array???
 # if user wants something not in the list, they can say what that is and fetch the price from ???? web?
+
